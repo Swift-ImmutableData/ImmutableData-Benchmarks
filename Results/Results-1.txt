@@ -1,0 +1,61 @@
+
+## Baseline 'Current_run'
+
+```
+Host 'C97RX2X127.local' with 12 'arm64' processors with 96 GB memory, running:
+Darwin Kernel Version 23.6.0: Mon Jul 29 21:13:04 PDT 2024; root:xnu-10063.141.2~1/RELEASE_ARM64_T6020
+```
+### Instructions
+
+| Test                                                      |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Delete (K) *       |      14 |      14 |      14 |      14 |      14 |      17 |      18 |     100 |
+| Benchmarks:Swift.Dictionary: Delete (K) *                 |    6228 |    6230 |    6234 |    6238 |    6242 |    6250 |    6254 |     100 |
+| Benchmarks:SwiftData.ModelContext: Delete (M) *           |     186 |     187 |     187 |     188 |     188 |     189 |     189 |     100 |
+| Benchmarks:SwiftData.ModelContext: Delete and Save (M) *  |     187 |     189 |     190 |     190 |     190 |     191 |     192 |     100 |
+
+### Malloc (total)
+
+| Test                                                      |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Delete *           |       4 |       4 |       4 |       4 |       4 |       4 |       4 |     100 |
+| Benchmarks:Swift.Dictionary: Delete *                     |       1 |       1 |       1 |       1 |       1 |       1 |       1 |     100 |
+| Benchmarks:SwiftData.ModelContext: Delete *               |     450 |     451 |     451 |     456 |     456 |     457 |     464 |     100 |
+| Benchmarks:SwiftData.ModelContext: Delete and Save *      |     967 |    1047 |    1074 |    1101 |    1137 |    1214 |    1237 |     100 |
+
+### Memory (resident peak)
+
+| Test                                                      |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Delete (M)         |      23 |      32 |      33 |      33 |      33 |      33 |      33 |     100 |
+| Benchmarks:Swift.Dictionary: Delete (M)                   |      14 |      36 |      40 |      40 |      40 |      40 |      40 |     100 |
+| Benchmarks:SwiftData.ModelContext: Delete (M)             |     254 |    1218 |    2212 |    3204 |    3804 |    4159 |    4201 |     100 |
+| Benchmarks:SwiftData.ModelContext: Delete and Save (M)    |     248 |    1069 |    1914 |    2741 |    3238 |    3542 |    3571 |     100 |
+
+### Throughput (# / s)
+
+| Test                                                      |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Delete (K)         |     585 |     546 |     534 |     490 |     445 |     240 |     240 |     100 |
+| Benchmarks:Swift.Dictionary: Delete (#)                   |    1106 |    1087 |    1074 |    1063 |    1047 |     888 |     888 |     100 |
+| Benchmarks:SwiftData.ModelContext: Delete (#)             |      52 |      50 |      49 |      49 |      48 |      36 |      36 |     100 |
+| Benchmarks:SwiftData.ModelContext: Delete and Save (#)    |      61 |      49 |      48 |      48 |      47 |      37 |      37 |     100 |
+
+### Time (total CPU)
+
+| Test                                                      |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Delete (μs) *      |       4 |       4 |       4 |       5 |       7 |      10 |      19 |     100 |
+| Benchmarks:Swift.Dictionary: Delete (μs) *                |     908 |     923 |     935 |     947 |     960 |    1000 |    1130 |     100 |
+| Benchmarks:SwiftData.ModelContext: Delete (μs) *          |   19293 |   20283 |   20349 |   20464 |   20726 |   27640 |   28067 |     100 |
+| Benchmarks:SwiftData.ModelContext: Delete and Save (μs) * |   16519 |   20775 |   20873 |   21021 |   21299 |   27460 |   27549 |     100 |
+
+### Time (wall clock)
+
+| Test                                                      |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Delete (μs) *      |       2 |       2 |       2 |       2 |       2 |       4 |       4 |     100 |
+| Benchmarks:Swift.Dictionary: Delete (μs) *                |     904 |     920 |     931 |     940 |     954 |     997 |    1126 |     100 |
+| Benchmarks:SwiftData.ModelContext: Delete (μs) *          |   19137 |   20136 |   20218 |   20316 |   20546 |   27525 |   27941 |     100 |
+| Benchmarks:SwiftData.ModelContext: Delete and Save (μs) * |   16386 |   20578 |   20709 |   20840 |   21070 |   27328 |   27328 |     100 |
+

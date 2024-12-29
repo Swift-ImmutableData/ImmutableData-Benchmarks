@@ -1,0 +1,55 @@
+
+## Baseline 'Current_run'
+
+```
+Host 'C97RX2X127.local' with 12 'arm64' processors with 96 GB memory, running:
+Darwin Kernel Version 23.6.0: Mon Jul 29 21:13:04 PDT 2024; root:xnu-10063.141.2~1/RELEASE_ARM64_T6020
+```
+### Instructions
+
+| Test                                                |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Count *      |     956 |     956 |     956 |     956 |     956 |     956 |     956 |     100 |
+| Benchmarks:Swift.Dictionary: Count *                |     957 |     957 |     957 |     957 |     957 |     957 |     957 |     100 |
+| Benchmarks:SwiftData.ModelContext: Count (M) *      |     154 |     159 |     159 |     159 |     160 |     161 |     161 |     100 |
+
+### Malloc (total)
+
+| Test                                                |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Count *      |       0 |       0 |       0 |       0 |       0 |       0 |       0 |     100 |
+| Benchmarks:Swift.Dictionary: Count *                |       0 |       0 |       0 |       0 |       0 |       0 |       0 |     100 |
+| Benchmarks:SwiftData.ModelContext: Count *          |     135 |     139 |     139 |     144 |     145 |     145 |     145 |     100 |
+
+### Memory (resident peak)
+
+| Test                                                |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Count (M)    |      23 |      33 |      33 |      33 |      33 |      33 |      33 |     100 |
+| Benchmarks:Swift.Dictionary: Count (M)              |      14 |      32 |      32 |      32 |      32 |      32 |      32 |     100 |
+| Benchmarks:SwiftData.ModelContext: Count (M)        |     240 |    1050 |    1886 |    2722 |    3221 |    3513 |    3555 |     100 |
+
+### Throughput (# / s)
+
+| Test                                                |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Count (K)    |    2398 |    2001 |    1849 |    1845 |    1716 |    1413 |    1412 |     100 |
+| Benchmarks:Swift.Dictionary: Count (K)              |    2183 |    2001 |    1845 |    1716 |    1601 |    1334 |    1333 |     100 |
+| Benchmarks:SwiftData.ModelContext: Count (#)        |      56 |      55 |      55 |      55 |      54 |      40 |      40 |     100 |
+
+### Time (total CPU)
+
+| Test                                                |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Count (μs) * |       2 |       3 |       3 |       3 |       3 |       7 |       7 |     100 |
+| Benchmarks:Swift.Dictionary: Count (μs) *           |       3 |       3 |       4 |       4 |       4 |       8 |       8 |     100 |
+| Benchmarks:SwiftData.ModelContext: Count (μs) *     |   18096 |   18235 |   18301 |   18399 |   18612 |   24969 |   25139 |     100 |
+
+### Time (wall clock)
+
+| Test                                                |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Count (μs) * |       0 |       0 |       1 |       1 |       1 |       1 |       1 |     100 |
+| Benchmarks:Swift.Dictionary: Count (μs) *           |       0 |       0 |       1 |       1 |       1 |       1 |       1 |     100 |
+| Benchmarks:SwiftData.ModelContext: Count (μs) *     |   17987 |   18121 |   18203 |   18317 |   18547 |   24855 |   24884 |     100 |
+

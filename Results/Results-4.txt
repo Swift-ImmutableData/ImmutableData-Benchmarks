@@ -1,0 +1,54 @@
+
+## Baseline 'Current_run'
+
+```
+Host 'C97RX2X127.local' with 12 'arm64' processors with 96 GB memory, running:
+Darwin Kernel Version 23.6.0: Mon Jul 29 21:13:04 PDT 2024; root:xnu-10063.141.2~1/RELEASE_ARM64_T6020
+```
+### Instructions
+
+| Test                                               |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:---------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Sort (M) *  |    6984 |    6986 |    6986 |    6986 |    6986 |    6986 |    6986 |     100 |
+| Benchmarks:Swift.Dictionary: Sort (M) *            |    6853 |    6866 |    6874 |    6879 |    6883 |    6895 |    6895 |     100 |
+| Benchmarks:SwiftData.ModelContext: Sort (G) *      |      33 |      33 |      33 |      33 |      33 |      33 |      33 |     100 |
+
+### Malloc (total)
+
+| Test                                               |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:---------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Sort (K) *  |    2266 |    2266 |    2266 |    2266 |    2266 |    2266 |    2266 |     100 |
+| Benchmarks:Swift.Dictionary: Sort (K) *            |    2255 |    2263 |    2267 |    2271 |    2273 |    2281 |    2281 |     100 |
+| Benchmarks:SwiftData.ModelContext: Sort (K) *      |    9181 |    9181 |    9181 |    9181 |    9181 |    9181 |    9181 |     100 |
+
+### Memory (resident peak)
+
+| Test                                               |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:---------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Sort (M)    |      27 |      36 |      36 |      36 |      37 |      37 |      37 |     100 |
+| Benchmarks:Swift.Dictionary: Sort (M)              |      34 |      34 |      34 |      34 |      34 |      34 |      34 |     100 |
+| Benchmarks:SwiftData.ModelContext: Sort (M)        |     336 |    1165 |    2015 |    2844 |    3341 |    3645 |    3672 |     100 |
+
+### Throughput (# / s)
+
+| Test                                               |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:---------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Sort (#)    |       3 |       3 |       3 |       3 |       3 |       3 |       3 |     100 |
+| Benchmarks:Swift.Dictionary: Sort (#)              |       3 |       3 |       3 |       3 |       3 |       3 |       3 |     100 |
+
+### Time (total CPU)
+
+| Test                                               |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:---------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Sort (μs) * |  335467 |  336331 |  336331 |  336855 |  337117 |  337904 |  339169 |     100 |
+| Benchmarks:Swift.Dictionary: Sort (μs) *           |  326249 |  327680 |  328204 |  328729 |  328991 |  329777 |  330451 |     100 |
+| Benchmarks:SwiftData.ModelContext: Sort (μs) *     | 2229116 | 2254438 | 2267021 | 2271216 | 2279604 | 2321547 | 2338431 |     100 |
+
+### Time (wall clock)
+
+| Test                                               |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:---------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Sort (μs) * |  335379 |  336069 |  336331 |  336855 |  337117 |  337641 |  339078 |     100 |
+| Benchmarks:Swift.Dictionary: Sort (μs) *           |  326140 |  327680 |  328204 |  328466 |  328991 |  329777 |  330356 |     100 |
+| Benchmarks:SwiftData.ModelContext: Sort (μs) *     | 2195670 | 2220884 | 2233467 | 2239758 | 2246050 | 2292187 | 2305728 |     100 |
+

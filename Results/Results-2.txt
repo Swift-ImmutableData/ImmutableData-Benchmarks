@@ -1,0 +1,61 @@
+
+## Baseline 'Current_run'
+
+```
+Host 'C97RX2X127.local' with 12 'arm64' processors with 96 GB memory, running:
+Darwin Kernel Version 23.6.0: Mon Jul 29 21:13:04 PDT 2024; root:xnu-10063.141.2~1/RELEASE_ARM64_T6020
+```
+### Instructions
+
+| Test                                                      |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Insert (K) *       |       9 |      10 |      10 |      10 |      10 |      14 |      14 |     100 |
+| Benchmarks:Swift.Dictionary: Insert (K) *                 |    6228 |    6238 |    6238 |    6246 |    6250 |    6260 |    6260 |     100 |
+| Benchmarks:SwiftData.ModelContext: Insert (K) *           |    1024 |    1034 |    3748 |    3858 |    4870 |    5119 |    5119 |     100 |
+| Benchmarks:SwiftData.ModelContext: Insert and Save (M) *  |     159 |     161 |     161 |     162 |     162 |     163 |     163 |     100 |
+
+### Malloc (total)
+
+| Test                                                      |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Insert *           |       3 |       3 |       3 |       3 |       3 |       3 |       3 |     100 |
+| Benchmarks:Swift.Dictionary: Insert *                     |       1 |       1 |       1 |       1 |       1 |       1 |       1 |     100 |
+| Benchmarks:SwiftData.ModelContext: Insert *               |     189 |     189 |     189 |     190 |     190 |     191 |     191 |     100 |
+| Benchmarks:SwiftData.ModelContext: Insert and Save *      |     789 |     791 |     796 |     814 |     820 |     832 |     833 |     100 |
+
+### Memory (resident peak)
+
+| Test                                                      |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Insert (M)         |      23 |      30 |      30 |      30 |      30 |      30 |      30 |     100 |
+| Benchmarks:Swift.Dictionary: Insert (M)                   |      14 |      35 |      35 |      39 |      39 |      39 |      39 |     100 |
+| Benchmarks:SwiftData.ModelContext: Insert (M)             |     254 |    1209 |    2202 |    3196 |    3794 |    4148 |    4185 |     100 |
+| Benchmarks:SwiftData.ModelContext: Insert and Save (M)    |     241 |    1044 |    1879 |    2716 |    3215 |    3525 |    3558 |     100 |
+
+### Throughput (# / s)
+
+| Test                                                      |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Insert (K)         |     800 |     728 |     706 |     667 |     615 |     167 |     167 |     100 |
+| Benchmarks:Swift.Dictionary: Insert (#)                   |    1126 |    1082 |    1072 |    1062 |    1041 |    1010 |    1010 |     100 |
+| Benchmarks:SwiftData.ModelContext: Insert (#)             |    7609 |    7235 |    7027 |    6751 |    6347 |    5607 |    5605 |     100 |
+| Benchmarks:SwiftData.ModelContext: Insert and Save (#)    |      56 |      55 |      54 |      54 |      52 |      39 |      39 |     100 |
+
+### Time (total CPU)
+
+| Test                                                      |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Insert (μs) *      |       3 |       3 |       3 |       4 |       6 |       8 |      10 |     100 |
+| Benchmarks:Swift.Dictionary: Insert (μs) *                |     891 |     928 |     936 |     947 |     961 |     988 |     993 |     100 |
+| Benchmarks:SwiftData.ModelContext: Insert (μs) *          |     146 |     165 |     282 |     307 |     349 |     372 |     378 |     100 |
+| Benchmarks:SwiftData.ModelContext: Insert and Save (μs) * |   18317 |   18629 |   18727 |   18891 |   19284 |   25992 |   25992 |     100 |
+
+### Time (wall clock)
+
+| Test                                                      |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Insert (μs) *      |       1 |       1 |       1 |       2 |       2 |       3 |       6 |     100 |
+| Benchmarks:Swift.Dictionary: Insert (μs) *                |     888 |     924 |     933 |     942 |     953 |     986 |     990 |     100 |
+| Benchmarks:SwiftData.ModelContext: Insert (μs) *          |     131 |     138 |     142 |     148 |     157 |     178 |     178 |     100 |
+| Benchmarks:SwiftData.ModelContext: Insert and Save (μs) * |   18016 |   18301 |   18399 |   18547 |   18956 |   25575 |   25659 |     100 |
+

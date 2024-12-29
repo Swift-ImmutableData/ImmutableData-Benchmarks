@@ -1,0 +1,55 @@
+
+## Baseline 'Current_run'
+
+```
+Host 'C97RX2X127.local' with 12 'arm64' processors with 96 GB memory, running:
+Darwin Kernel Version 23.6.0: Mon Jul 29 21:13:04 PDT 2024; root:xnu-10063.141.2~1/RELEASE_ARM64_T6020
+```
+### Instructions
+
+| Test                                               |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:---------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Read *      |    1165 |    1165 |    1165 |    1165 |    1165 |    1165 |    1165 |     100 |
+| Benchmarks:Swift.Dictionary: Read *                |    1095 |    1095 |    1095 |    1106 |    1117 |    1183 |    1194 |     100 |
+| Benchmarks:SwiftData.ModelContext: Read (M) *      |     183 |     187 |     187 |     188 |     188 |     189 |     189 |     100 |
+
+### Malloc (total)
+
+| Test                                               |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:---------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Read *      |       0 |       0 |       0 |       0 |       0 |       0 |       0 |     100 |
+| Benchmarks:Swift.Dictionary: Read *                |       0 |       0 |       0 |       0 |       0 |       0 |       0 |     100 |
+| Benchmarks:SwiftData.ModelContext: Read *          |     442 |     444 |     444 |     449 |     450 |     453 |     456 |     100 |
+
+### Memory (resident peak)
+
+| Test                                               |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:---------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Read (M)    |      23 |      33 |      33 |      33 |      33 |      33 |      33 |     100 |
+| Benchmarks:Swift.Dictionary: Read (M)              |      14 |      32 |      32 |      32 |      32 |      32 |      32 |     100 |
+| Benchmarks:SwiftData.ModelContext: Read (M)        |     241 |    1055 |    1892 |    2720 |    3228 |    3519 |    3568 |     100 |
+
+### Throughput (# / s)
+
+| Test                                               |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:---------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Read (K)    |    2183 |    1845 |    1716 |    1713 |    1601 |    1093 |    1092 |     100 |
+| Benchmarks:Swift.Dictionary: Read (K)              |    2183 |    1849 |    1845 |    1713 |    1601 |    1201 |    1200 |     100 |
+| Benchmarks:SwiftData.ModelContext: Read (#)        |      50 |      50 |      50 |      49 |      49 |      37 |      37 |     100 |
+
+### Time (total CPU)
+
+| Test                                               |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:---------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Read (μs) * |       2 |       3 |       3 |       3 |       3 |       6 |       6 |     100 |
+| Benchmarks:Swift.Dictionary: Read (μs) *           |       3 |       3 |       4 |       4 |       4 |      10 |      11 |     100 |
+| Benchmarks:SwiftData.ModelContext: Read (μs) *     |   20115 |   20234 |   20316 |   20464 |   20660 |   24150 |   27103 |     100 |
+
+### Time (wall clock)
+
+| Test                                               |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:---------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Read (μs) * |       0 |       1 |       1 |       1 |       1 |       1 |       1 |     100 |
+| Benchmarks:Swift.Dictionary: Read (μs) *           |       0 |       1 |       1 |       1 |       1 |       1 |       1 |     100 |
+| Benchmarks:SwiftData.ModelContext: Read (μs) *     |   19924 |   20103 |   20169 |   20316 |   20496 |   23986 |   26915 |     100 |
+

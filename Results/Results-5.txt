@@ -1,0 +1,61 @@
+
+## Baseline 'Current_run'
+
+```
+Host 'C97RX2X127.local' with 12 'arm64' processors with 96 GB memory, running:
+Darwin Kernel Version 23.6.0: Mon Jul 29 21:13:04 PDT 2024; root:xnu-10063.141.2~1/RELEASE_ARM64_T6020
+```
+### Instructions
+
+| Test                                                      |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Update (K) *       |      15 |      15 |      15 |      16 |      18 |      21 |      23 |     100 |
+| Benchmarks:Swift.Dictionary: Update (K) *                 |    6229 |    6230 |    6259 |    6275 |    6279 |    6291 |    6293 |     100 |
+| Benchmarks:SwiftData.ModelContext: Update (M) *           |     185 |     188 |     188 |     188 |     189 |     189 |     189 |     100 |
+| Benchmarks:SwiftData.ModelContext: Update and Save (M) *  |     186 |     189 |     189 |     190 |     190 |     191 |     191 |     100 |
+
+### Malloc (total)
+
+| Test                                                      |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Update *           |       5 |       5 |       5 |       5 |       5 |       5 |       5 |     100 |
+| Benchmarks:Swift.Dictionary: Update *                     |       1 |       1 |       1 |       1 |       1 |       1 |       1 |     100 |
+| Benchmarks:SwiftData.ModelContext: Update *               |     458 |     459 |     459 |     460 |     464 |     465 |     472 |     100 |
+| Benchmarks:SwiftData.ModelContext: Update and Save *      |     896 |     899 |     901 |     907 |     913 |     924 |     964 |     100 |
+
+### Memory (resident peak)
+
+| Test                                                      |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Update (M)         |      23 |      33 |      33 |      33 |      33 |      33 |      33 |     100 |
+| Benchmarks:Swift.Dictionary: Update (M)                   |      14 |      43 |      43 |      43 |      43 |      43 |      43 |     100 |
+| Benchmarks:SwiftData.ModelContext: Update (M)             |     252 |    1217 |    2210 |    3213 |    3802 |    4163 |    4199 |     100 |
+| Benchmarks:SwiftData.ModelContext: Update and Save (M)    |     249 |    1043 |    1888 |    2716 |    3223 |    3515 |    3559 |     100 |
+
+### Throughput (# / s)
+
+| Test                                                      |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Update (K)         |     500 |     471 |     453 |     421 |     282 |     185 |     185 |     100 |
+| Benchmarks:Swift.Dictionary: Update (#)                   |    1100 |    1065 |    1044 |    1030 |    1002 |     811 |     811 |     100 |
+| Benchmarks:SwiftData.ModelContext: Update (#)             |      50 |      50 |      49 |      49 |      48 |      37 |      37 |     100 |
+| Benchmarks:SwiftData.ModelContext: Update and Save (#)    |      49 |      49 |      49 |      48 |      48 |      35 |      35 |     100 |
+
+### Time (total CPU)
+
+| Test                                                      |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Update (μs) *      |       4 |       4 |       4 |       5 |       7 |       9 |      10 |     100 |
+| Benchmarks:Swift.Dictionary: Update (μs) *                |     912 |     942 |     961 |     975 |     998 |    1141 |    1236 |     100 |
+| Benchmarks:SwiftData.ModelContext: Update (μs) *          |   20081 |   20349 |   20431 |   20595 |   20922 |   27410 |   27523 |     100 |
+| Benchmarks:SwiftData.ModelContext: Update and Save (μs) * |   20481 |   20660 |   20742 |   20873 |   21119 |   27820 |   28453 |     100 |
+
+### Time (wall clock)
+
+| Test                                                      |      p0 |     p25 |     p50 |     p75 |     p90 |     p99 |    p100 | Samples |
+|:----------------------------------------------------------|--------:|--------:|--------:|--------:|--------:|--------:|--------:|--------:|
+| Benchmarks:Collections.TreeDictionary: Update (μs) *      |       2 |       2 |       2 |       2 |       4 |       5 |       5 |     100 |
+| Benchmarks:Swift.Dictionary: Update (μs) *                |     909 |     937 |     957 |     971 |     995 |    1134 |    1232 |     100 |
+| Benchmarks:SwiftData.ModelContext: Update (μs) *          |   19899 |   20185 |   20251 |   20447 |   20775 |   27279 |   27378 |     100 |
+| Benchmarks:SwiftData.ModelContext: Update and Save (μs) * |   20301 |   20480 |   20562 |   20693 |   20972 |   27689 |   28286 |     100 |
+
